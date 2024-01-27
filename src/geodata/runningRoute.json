@@ -1,0 +1,13 @@
+{
+    "type": "Feature",
+    "properties": {
+      "name": "My Running Route"
+    },
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [41.29, -71.18],
+        [41.31, -72.21]
+      ]
+    }
+  }

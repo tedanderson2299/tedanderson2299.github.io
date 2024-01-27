@@ -1,0 +1,16 @@
+#carousel {
+    max-width: 600px; /* Adjust the width */
+    margin: auto; /* Center the carousel */
+    border: 1px solid #ddd; /* Optional: adds a border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a shadow */
+}
+.carousel-indicators li {
+    width: 15px; /* Increase width */
+    height: 15px; /* Increase height */
+    border-radius: 50%; /* Make them circular */
+    background-color: #007bff; /* Change color (Bootstrap primary color for example) */
+}
+
+.carousel-indicators .active {
+    background-color: #ff0000; /* Change color for the active indicator */
+}
