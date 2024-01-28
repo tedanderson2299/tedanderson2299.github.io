@@ -67,7 +67,8 @@ a:hover {
   width: 70%;
 }
 .hero-image{
-  width: 70%;
+  width: auto;
+  height: auto;
 }
 
 .section-subtitle, .footer__text, .footer__text a {
