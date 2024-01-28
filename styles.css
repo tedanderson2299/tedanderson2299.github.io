@@ -63,6 +63,9 @@ a:hover {
   margin: 0;
   font-weight: bold;
 }
+.hero-image{
+  width: 70%;
+}
 
 .section-subtitle, .footer__text, .footer__text a {
   font-weight: lighter;
