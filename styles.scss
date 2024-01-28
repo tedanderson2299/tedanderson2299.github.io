@@ -1,30 +1,26 @@
-@import "./sass/vendors/bootstrap.scss";
+@import "sass/vendors/bootstrap.scss";
 
-@import "./sass/abstracts/mixins";
-@import "./sass/abstracts/variables";
-@import "./sass/abstracts/helpers";
+@import "sass/abstracts/mixins";
+@import "sass/abstracts/variables";
+@import "sass/abstracts/helpers";
 
-@import "./sass/base/base";
-@import "./sass/base/typography";
+@import "sass/base/base";
+@import "sass/base/typography";
 
-@import "./sass/components/buttons";
-@import "./sass/components/card";
+@import "sass/components/buttons";
+@import "sass/components/card";
 
-@import "./sass/layout/footer";
-@import "./sass/layout/sections";
+@import "sass/layout/footer";
+@import "sass/layout/sections";
 
-@import "./sass/sections/about";
-@import "./sass/sections/contact";
-@import "./sass/sections/hero";
-@import "./sass/sections/projects";
-@import "./sass/sections/map";
-@import "./sass/sections/art";
-@import "./sass/sections/product";
-@import "./sass/sections/arcgis";
-/* CSS url as a string */
-@import "https://js.arcgis.com/4.28/@arcgis/core/assets/esri/themes/light/main.css";
-
-
+@import "sass/sections/about";
+@import "sass/sections/contact";
+@import "sass/sections/hero";
+@import "sass/sections/projects";
+@import "sass/sections/map";
+@import "sass/sections/art";
+@import "sass/sections/product";
+@import "sass/sections/arcgis";
 
 
 
