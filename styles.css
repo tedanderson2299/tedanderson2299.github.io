@@ -63,10 +63,8 @@ a:hover {
   margin: 0;
   font-weight: bold;
 }
-.hero-cta{
-  width: 70%;
-}
-.hero-image{
+
+.image{
   width: auto;
   height: auto;
 }
