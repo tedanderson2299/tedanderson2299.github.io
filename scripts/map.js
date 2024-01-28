@@ -1,15 +1,15 @@
 // Data  
-import kingstonStationImage from './assets/Kingstonstation.jpeg';
-import toGateway from './geodata/rugglesTobellevue.geojson';
-import BBChar from './geodata/BackBayToField.geojson';
-import NPTtoKIN from './geodata/RouteToKIN.geojson';
-import lax from './assets/ulaxboston.jpeg';
-import homeImg from './assets/home.png';
-import bbyImg from '../assets/backbaystation.jpeg';
-import bozeman09 from './assets/bozeman2009.png';
-import bozeman09class from './assets/bozeman2009class.png';
-import bozeman22class from './assets/bozeman2022class.png';
-import bozeman22 from './assets/bozeman2022.png';
+// import kingstonStationImage from './assets/Kingstonstation.jpeg';
+// import toGateway from './geodata/rugglesTobellevue.geojson';
+// import BBChar from './geodata/BackBayToField.geojson';
+// import NPTtoKIN from './geodata/RouteToKIN.geojson';
+// import lax from './assets/ulaxboston.jpeg';
+// import homeImg from './assets/home.png';
+// import bbyImg from '../assets/backbaystation.jpeg';
+// import bozeman09 from './assets/bozeman2009.png';
+// import bozeman09class from './assets/bozeman2009class.png';
+// import bozeman22class from './assets/bozeman2022class.png';
+// import bozeman22 from './assets/bozeman2022.png';
 
 
 
@@ -61,214 +61,214 @@ var map2 = L.map('landclassMap',{
     layers: [darkBaseMap]
 });
 
-var imageBounds = [
-    [45.69099045552885, -111.14617480944776],
-    [45.66688330275412, -111.07081546496534]
-];
-map2.fitBounds(imageBounds);
+// var imageBounds = [
+//     [45.69099045552885, -111.14617480944776],
+//     [45.66688330275412, -111.07081546496534]
+// ];
+// map2.fitBounds(imageBounds);
 
-var image1 = L.imageOverlay(bozeman09, imageBounds).addTo(map2);
-var image2 = L.imageOverlay(bozeman09class,imageBounds);
-var image3 = L.imageOverlay(bozeman22class,imageBounds);
-var image4 = L.imageOverlay(bozeman22, imageBounds).addTo(map2);
-var baseMaps = {};
+// var image1 = L.imageOverlay(bozeman09, imageBounds).addTo(map2);
+// var image2 = L.imageOverlay(bozeman09class,imageBounds);
+// var image3 = L.imageOverlay(bozeman22class,imageBounds);
+// var image4 = L.imageOverlay(bozeman22, imageBounds).addTo(map2);
+// var baseMaps = {};
 
-var overlayMaps = {
-    "Bozeman 2009 Land Classification": image2,
-    "Bozeman 2022 Land Classification": image3
-};
+// var overlayMaps = {
+//     "Bozeman 2009 Land Classification": image2,
+//     "Bozeman 2022 Land Classification": image3
+// };
 
-// Initialize the slider
-var slider = document.getElementById('layer-slider');
+// // Initialize the slider
+// var slider = document.getElementById('layer-slider');
 
-// Function to update layer opacity based on slider
-function updateOpacity() {
-    var value = slider.value;
-    image4.setOpacity(value / 100);
-    image1.setOpacity(1 - value / 100);
-}
+// // Function to update layer opacity based on slider
+// function updateOpacity() {
+//     var value = slider.value;
+//     image4.setOpacity(value / 100);
+//     image1.setOpacity(1 - value / 100);
+// }
 
-// Event listener for the slider
-slider.addEventListener('input', updateOpacity);
+// // Event listener for the slider
+// slider.addEventListener('input', updateOpacity);
 
-// Set initial opacity
-updateOpacity();
-
-
-// layer control 
-L.control.layers(baseMaps, overlayMaps).addTo(map2);
-// Add a label to the layer controller
-
-// layer control label 
-var layerControlLabel = L.control({position: 'topright'});
-layerControlLabel.onAdd = function (map2) {
-    var div = L.DomUtil.create('div', 'layer-control-label');
-    div.innerHTML = '<strong>Land Classification Layers ^</strong>';
-    return div;
-};
-layerControlLabel.addTo(map2);
-
-// Map 1
-
-var legend = L.control({position: 'topright'}); // You can change the position as needed
-legend.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend');
-    // Add HTML content to the div element, for example:
-    div.innerHTML += '<h4>Transportation</h4>';
-    div.innerHTML += '<i style="background: #ff0000"></i> <span>Train</span><br>';
-    div.innerHTML += '<i style="background: #00ff00"></i> <span>Bus</span><br>';
-    div.innerHTML += '<i style="background: #0000ff"></i> <span>Walking</span><br>';
-
-    // ... add more items as needed
-
-    return div;
-};
-legend.addTo(map);
+// // Set initial opacity
+// updateOpacity();
 
 
+// // layer control 
+// L.control.layers(baseMaps, overlayMaps).addTo(map2);
+// // Add a label to the layer controller
 
-// // // Map Layers // // // 
-// buses layer 
-var busGroup = L.featureGroup();
-var RIPTA64 = L.geoJSON(NPTtoKIN, {
-    color: '#00ff00',
-});
-var bounds = RIPTA64.getBounds();
-var center = bounds.getCenter();
-RIPTA64.bindTooltip("RIPTA 64 Bus",{
-    center,
-    permanent: true,
-    direction: 'top'}).addTo(busGroup);
+// // layer control label 
+// var layerControlLabel = L.control({position: 'topright'});
+// layerControlLabel.onAdd = function (map2) {
+//     var div = L.DomUtil.create('div', 'layer-control-label');
+//     div.innerHTML = '<strong>Land Classification Layers ^</strong>';
+//     return div;
+// };
+// layerControlLabel.addTo(map2);
 
-// Train Route Fixer
-var kingstonStationLat = 41.4840; // Latitude of Kingston Station
-var backBayStationLat = 42.3473; // Latitude of Back Bay Station
-// Train data Feature Group 
-var trainGroup = L.featureGroup();
-// line withinLatRange
-function isWithinLatRange(coord, minLat, maxLat) {
-    var lat = coord[1];
-    return lat >= minLat && lat <= maxLat;
-}
-// Filter train data 
-function filterTrainData(trainData, minLat, maxLat) {
-    var filteredFeatures = trainData.features.map(feature => {
-        var filteredLineStrings = feature.geometry.coordinates.map(lineString => {
-            return lineString.filter(coord => isWithinLatRange(coord, minLat, maxLat));
-        }).filter(lineString => lineString.length > 0); // Keep only non-empty line strings
+// // Map 1
 
-        return {
-            ...feature,
-            geometry: {
-                ...feature.geometry,
-                coordinates: filteredLineStrings
-            }
-        };
-    }).filter(feature => feature.geometry.coordinates.length > 0); // Keep only features with non-empty geometries
+// var legend = L.control({position: 'topright'}); // You can change the position as needed
+// legend.onAdd = function (map) {
+//     var div = L.DomUtil.create('div', 'info legend');
+//     // Add HTML content to the div element, for example:
+//     div.innerHTML += '<h4>Transportation</h4>';
+//     div.innerHTML += '<i style="background: #ff0000"></i> <span>Train</span><br>';
+//     div.innerHTML += '<i style="background: #00ff00"></i> <span>Bus</span><br>';
+//     div.innerHTML += '<i style="background: #0000ff"></i> <span>Walking</span><br>';
 
-    return {
-        ...trainData,
-        features: filteredFeatures
-    };
-}
-var filteredTrainData = filterTrainData(trainData, kingstonStationLat, backBayStationLat);
-// add train data to train group 
-var trainGeo = L.geoJSON(filteredTrainData, {
-    color: 'red',
-    weight: 2,
-    opacity: 1,
-    lineJoin: 'round'
-});
+//     // ... add more items as needed
 
-// var trainBounds = traingeo.getBounds();
-// var trainCenter = trainBounds.getCenter();
-
-trainGeo.bindTooltip("Amtrak NE 174 Train",{
-    permanent: true,
-    direction: 'top'}).addTo(trainGroup);
-
-
-// Walking Group  
-var Walking = L.featureGroup();
-var homeToGateway = L.geoJSON(toGateway);
-var bbytoField =  L.geoJSON(BBChar); 
-homeToGateway.addTo(Walking);
-bbytoField.addTo(Walking);
-
-
-// Marker Group 
-var markersGroup = L.featureGroup();
-// var markers = L.markerClusterGroup();
+//     return div;
+// };
+// legend.addTo(map);
 
 
 
-// Marker Coordinates 
-var kingstonStationCoords = [41.4840, -71.5607]; // Replace with exact coordinates
-var backBayStationCoords = [42.347503499999995, -71.07493199999999]; // Replace with exact coordinates
-var home = [41.4679941,-71.30712009999999];
-var charlestownHigh = [42.3803747, -71.06099619999999];
+// // // // Map Layers // // // 
+// // buses layer 
+// var busGroup = L.featureGroup();
+// var RIPTA64 = L.geoJSON(NPTtoKIN, {
+//     color: '#00ff00',
+// });
+// var bounds = RIPTA64.getBounds();
+// var center = bounds.getCenter();
+// RIPTA64.bindTooltip("RIPTA 64 Bus",{
+//     center,
+//     permanent: true,
+//     direction: 'top'}).addTo(busGroup);
 
-var KINcustomMarkerHtml = 
-`<div class="custom-marker"> 
-    <img src="${kingstonStationImage}" class="custom-icon-img"> 
-    <p>Kingston Station</p>
-</div>`;
+// // Train Route Fixer
+// var kingstonStationLat = 41.4840; // Latitude of Kingston Station
+// var backBayStationLat = 42.3473; // Latitude of Back Bay Station
+// // Train data Feature Group 
+// var trainGroup = L.featureGroup();
+// // line withinLatRange
+// function isWithinLatRange(coord, minLat, maxLat) {
+//     var lat = coord[1];
+//     return lat >= minLat && lat <= maxLat;
+// }
+// // Filter train data 
+// function filterTrainData(trainData, minLat, maxLat) {
+//     var filteredFeatures = trainData.features.map(feature => {
+//         var filteredLineStrings = feature.geometry.coordinates.map(lineString => {
+//             return lineString.filter(coord => isWithinLatRange(coord, minLat, maxLat));
+//         }).filter(lineString => lineString.length > 0); // Keep only non-empty line strings
 
-var KINcustomIcon = L.divIcon({
-    className: 'my-custom-icon', // Custom class for additional styling
-    html: KINcustomMarkerHtml,
-    iconSize: [40, 40], // Adjust the size as needed
-    iconAnchor: [20, 20]
+//         return {
+//             ...feature,
+//             geometry: {
+//                 ...feature.geometry,
+//                 coordinates: filteredLineStrings
+//             }
+//         };
+//     }).filter(feature => feature.geometry.coordinates.length > 0); // Keep only features with non-empty geometries
 
-});
+//     return {
+//         ...trainData,
+//         features: filteredFeatures
+//     };
+// }
+// var filteredTrainData = filterTrainData(trainData, kingstonStationLat, backBayStationLat);
+// // add train data to train group 
+// var trainGeo = L.geoJSON(filteredTrainData, {
+//     color: 'red',
+//     weight: 2,
+//     opacity: 1,
+//     lineJoin: 'round'
+// });
 
-var LAXcustomMarkerHtml = 
-`<div class="custom-marker"> 
-    <img src="${lax}" class="custom-icon-img"> 
-    <p>Boston Lax!</p>
-</div>`;
+// // var trainBounds = traingeo.getBounds();
+// // var trainCenter = trainBounds.getCenter();
 
-var LAXcustomIcon = L.divIcon({
-    className: 'my-custom-icon', // Custom class for additional styling
-    html: LAXcustomMarkerHtml,
-    iconSize: [150, 150], // Adjust the size as needed
-    iconAnchor: [20, 20]
-});
-
-
-var bbycustomMarkerHtml = 
-`<div class="custom-marker"> 
-    <img src="${bbyImg}" class="custom-icon-img"> 
-    <p>Back Bay Station</p>
-</div>`;
-
-var bbycustomIcon = L.divIcon({
-    className: 'my-custom-icon', // Custom class for additional styling
-    html: bbycustomMarkerHtml,
-    iconSize: [60, 60], // Adjust the size as needed
-    iconAnchor: [20, 20]
-});
+// trainGeo.bindTooltip("Amtrak NE 174 Train",{
+//     permanent: true,
+//     direction: 'top'}).addTo(trainGroup);
 
 
-var homeIcon = L.icon({
-    iconUrl: homeImg,
-    iconSize: [30, 30] // Adjust the size as needed
-});
+// // Walking Group  
+// var Walking = L.featureGroup();
+// var homeToGateway = L.geoJSON(toGateway);
+// var bbytoField =  L.geoJSON(BBChar); 
+// homeToGateway.addTo(Walking);
+// bbytoField.addTo(Walking);
 
-// Create markers and add them to the feature group
-L.marker(kingstonStationCoords,{
-    icon: KINcustomIcon,
-    }).addTo(markersGroup);
-L.marker(charlestownHigh, {icon: LAXcustomIcon}).addTo(markersGroup);
-L.marker(backBayStationCoords, {icon: bbycustomIcon}).addTo(markersGroup);
-L.marker(home, {icon: homeIcon}).addTo(markersGroup);
 
-// Add markers group to map 
-markersGroup.addTo(map);
-// Add Walking Group 
-Walking.addTo(map);
-// Add Train Group 
-trainGroup.addTo(map);
-// Add the busGroup to the map
-busGroup.addTo(map);
+// // Marker Group 
+// var markersGroup = L.featureGroup();
+// // var markers = L.markerClusterGroup();
+
+
+
+// // Marker Coordinates 
+// var kingstonStationCoords = [41.4840, -71.5607]; // Replace with exact coordinates
+// var backBayStationCoords = [42.347503499999995, -71.07493199999999]; // Replace with exact coordinates
+// var home = [41.4679941,-71.30712009999999];
+// var charlestownHigh = [42.3803747, -71.06099619999999];
+
+// var KINcustomMarkerHtml = 
+// `<div class="custom-marker"> 
+//     <img src="${kingstonStationImage}" class="custom-icon-img"> 
+//     <p>Kingston Station</p>
+// </div>`;
+
+// var KINcustomIcon = L.divIcon({
+//     className: 'my-custom-icon', // Custom class for additional styling
+//     html: KINcustomMarkerHtml,
+//     iconSize: [40, 40], // Adjust the size as needed
+//     iconAnchor: [20, 20]
+
+// });
+
+// var LAXcustomMarkerHtml = 
+// `<div class="custom-marker"> 
+//     <img src="${lax}" class="custom-icon-img"> 
+//     <p>Boston Lax!</p>
+// </div>`;
+
+// var LAXcustomIcon = L.divIcon({
+//     className: 'my-custom-icon', // Custom class for additional styling
+//     html: LAXcustomMarkerHtml,
+//     iconSize: [150, 150], // Adjust the size as needed
+//     iconAnchor: [20, 20]
+// });
+
+
+// var bbycustomMarkerHtml = 
+// `<div class="custom-marker"> 
+//     <img src="${bbyImg}" class="custom-icon-img"> 
+//     <p>Back Bay Station</p>
+// </div>`;
+
+// var bbycustomIcon = L.divIcon({
+//     className: 'my-custom-icon', // Custom class for additional styling
+//     html: bbycustomMarkerHtml,
+//     iconSize: [60, 60], // Adjust the size as needed
+//     iconAnchor: [20, 20]
+// });
+
+
+// var homeIcon = L.icon({
+//     iconUrl: homeImg,
+//     iconSize: [30, 30] // Adjust the size as needed
+// });
+
+// // Create markers and add them to the feature group
+// L.marker(kingstonStationCoords,{
+//     icon: KINcustomIcon,
+//     }).addTo(markersGroup);
+// L.marker(charlestownHigh, {icon: LAXcustomIcon}).addTo(markersGroup);
+// L.marker(backBayStationCoords, {icon: bbycustomIcon}).addTo(markersGroup);
+// L.marker(home, {icon: homeIcon}).addTo(markersGroup);
+
+// // Add markers group to map 
+// markersGroup.addTo(map);
+// // Add Walking Group 
+// Walking.addTo(map);
+// // Add Train Group 
+// trainGroup.addTo(map);
+// // Add the busGroup to the map
+// busGroup.addTo(map);
 
