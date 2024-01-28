@@ -1,15 +1,15 @@
 // Data  
-import kingstonStationImage from '../assets/Kingstonstation.jpeg';
-import toGateway from '../geodata/rugglesTobellevue.geojson';
-import BBChar from '../geodata/BackBayToField.geojson';
-import NPTtoKIN from '../geodata/RouteToKIN.geojson';
-import lax from '../assets/ulaxboston.jpeg';
-import homeImg from '../assets/home.png';
+import kingstonStationImage from './assets/Kingstonstation.jpeg';
+import toGateway from './geodata/rugglesTobellevue.geojson';
+import BBChar from './geodata/BackBayToField.geojson';
+import NPTtoKIN from './geodata/RouteToKIN.geojson';
+import lax from './assets/ulaxboston.jpeg';
+import homeImg from './assets/home.png';
 import bbyImg from '../assets/backbaystation.jpeg';
-import bozeman09 from '../assets/bozeman2009.png';
-import bozeman09class from '../assets/bozeman2009class.png';
-import bozeman22class from '../assets/bozeman2022class.png';
-import bozeman22 from '../assets/bozeman2022.png';
+import bozeman09 from './assets/bozeman2009.png';
+import bozeman09class from './assets/bozeman2009class.png';
+import bozeman22class from './assets/bozeman2022class.png';
+import bozeman22 from './assets/bozeman2022.png';
 
 
 
