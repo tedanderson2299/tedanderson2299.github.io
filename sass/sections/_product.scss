@@ -1,0 +1,73 @@
+/* General styling for the product section */
+#product {
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+  padding-left: 2rem; /* Added left padding */
+  padding-right: 2rem; /* Added right padding */
+}
+
+.product-wrapper {
+  margin-bottom: 15rem;
+  padding-left: 2rem; /* Added left padding */
+  padding-right: 2rem; /* Added right padding */
+}
+
+.product-img {
+  width: 70%;
+  height: 50%;
+  margin-top: 1rem; /* Space between cards */
+  // margin-bottom: 2rem; /* Space between cards */
+  padding: 2rem;
+}
+
+.product-title {
+ font-weight: bold;
+ margin-bottom: 1rem;
+}
+.product-text {
+  font-weight: lighter;
+  font-size: medium;
+  margin-top: 1.5rem;
+  text-align: left;
+  text-justify: auto;
+ }
+
+.product-cta {
+  display: flex;
+
+
+  @include respond(tab-port) {
+    justify-content: center;
+  }
+
+  & a {
+    font-size: 1.8rem;
+    // justify-content: end;
+    // flex: auto;
+    // margin-top: 40px; /* Adjust the margin as needed */
+
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/* Styling for individual cards within the product section */
+#product .card {
+  margin-bottom: 2rem; /* Space between cards */
+  padding: 2rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  #product {
+    padding-left: 1rem; /* Smaller left padding on smaller screens */
+    padding-right: 1rem; /* Smaller right padding on smaller screens */
+  }
+
+  #product .card {
+    margin-bottom: 1rem; /* Smaller space between cards on smaller screens */
+  }
+}

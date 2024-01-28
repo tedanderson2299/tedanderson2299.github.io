@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <!-- Title -->
+    <title> Theodore Anderson | Porfolio </title>
+    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="[theoanderson2299], [Theodore Anderson], Product Design" />
+    <!-- Todo: improve your SEO by adding a small description of you -->
+    <meta name="description" content=" Theodore Anderson | Product Design" />
+    <!-- Style Sheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="styles.scss" />
+    
+    <!-- Scroll Reveal  -->
+    <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+    <!-- Leaflet Styles-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+  </head>
+
+  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
+  <body>
+    <div id="top"></div>
+    <section id="hero">
+    <div class="container my-5">
+      <div class="hero-row row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="hero-title load-hidden">Theodore Anderson 
+            <div class="hero-cta load-hidden"> 
+              <span class="hero-subtitle">Product | Tinkering | Art </span>
+            </div>
+          </h1>
+          <div class="hero-cta hero-text load-hidden"> 
+            <p>Welcome to my portfolio! Here you will find some of my professional work as a software product manager, experiements with webmaps, past GIS work, art, and recent writings on history, policy and technology!  
+              <br>
+              <br> Check it out below:
+            </p>
+          </div>
+          <div class="hero-cta load-hidden">
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">About</a>
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#product">Product</a>
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#projects">Maps</a>
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#art">Art</a>
+            <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#contact">Contact</a>  
+          </div>
+  
+        </div>
+        <div class="col-lg-4 hero-cta load-hidden">
+            <img src="assets/Profile.jpeg" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- **** About Section **** -->
+    <section id="about">
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <h2 class="d-flex section-title dark-blue-text">About Me</h2>
+        </header>
+          <div class="row about-wrapper"> <!-- Use a row to contain columns -->
+              <!-- Image Column -->
+              <div class="col-lg-4">
+              <!-- <h2 class="section-title dark-blue-text">About Me</h2> -->
+                <img src="assets/Presidentials.jpeg" class="about-wrapper__image">
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="assets/resume.pdf">
+                  View Resume
+              </a>
+              </div>
+              <div class="row col-lg-7">
+                <!-- <div class="about-wrapper__info"> -->
+                  <p class="about-wrapper__info-text">
+                    I am a software product manager and strategist for DataArt Solutions in New York City. I help craft product vision, conduct UX research, and analyze technology. I am especially proud of contributing to the design and development of groundbreaking software for the 988-Suicide Hotline.
+                    <br>
+                    <br>Before DataArt, I studied geosciences and played lacrosse at Williams College. As a geoscientist, my passions for the Earth evolved to include technology and system design, as I designed programs to model complex earth systems such as Arctic Sea ice or the atmosphere. As my love for technology grew, so did my love for building, leading me to experiment with several start-ups ranging from recycling machines to fin-techs.
+                    <br>
+                    <br> At home I tinker with building mobile applications, read and write about US history, trail run, and throw epic dinner parties. </p>
+                    <!-- Additional paragraphs and content -->
+                    <span class="d-flex mt-3">
+                        
+                    </span>
+                <!-- </div> -->
+              </div>
+              <!-- Text Content Column -->
+          </div>
+      </div>
+  </section>
+    <!-- Product Section -->
+  <section id="product">
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+          <h2 class="d-flex section-title">Product</h2>
+      </header>
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-start">988 Air Traffic Control</h1>
+            <p class="col-md-8 fs-4 text-start">In the June of 2023, I began desiging and later building an "Air-Traffic Control" system for the 988-Suicide Hotline.</p>
+              <p class="col-md-8 fs-4 text-start">Duration: 8 months (on-going)</p>
+              <p class="col-md-8 fs-4 text-start">Team: DataArt Solution Design Group: 4 product managers, 2 UX designers, 2 Architects, 6 developers.</p>
+            <p class="col-md-8 fs-4 text-start">My Role: associate product manager</p>>
+        </br> 
+            <img src="assets/988.jpg" class="product-img">
+        </div>
+        <a rel="noreferrer" class="cta-btn cta-btn--resume" href="assets/CrisisHot.pdf">
+          View Project
+        </a>
+      </div>
+
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-start">CX Research for Serious Mental Illness & Substance Use Disorders</h1>
+            <p class="col-md-8 fs-4 text-start">In the winter and spring of 2023 my team and I conducted primary research, including 50 hours of interviews, on the insurance experience for people experiencing serious mental illness (SMI) and Substance Use Disorder (SUD). Follow the link below to read an excerpt from our research.</p>
+            <p class="col-md-8 fs-4 text-start"> Duration: 6 months</p>
+            <p class="col-md-8 fs-4 text-start"> Team: DataArt Solution Design Group: 3 product managers, 1 UX designer</p>
+            <p class="col-md-8 fs-4 text-start"> My Role: Product manager</p>
+            <img src="assets/CX.png" class="product-img">
+
+        </div>
+        <a rel="noreferrer" class="cta-btn cta-btn--resume" href="assets/CXOBHCopy.pdf">
+          View Project 
+        </a>
+      </div>
+
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-start">Crotchet Buddy</h1>
+            <p class="col-md-8 fs-4 text-start">In January, 2022 I took a class at Williams College, "Product Management & Solution Design". The class introduced me to a structured approach to solving problems with software. My capstone project, "Crotchet Buddy" sought to solve problems for Crotchet lovers. My professor, Allan Wellenstein, recruited our Crotchet Buddy team to join the Solution Design Group at DataArt.</p>
+            <p class="col-md-8 fs-4 text-start"> Duration: 3 Weeks</p>
+            <p class="col-md-8 fs-4 text-start"> Team: 3 Students</p>
+            <p class="col-md-8 fs-4 text-start">My Role: Student</p>
+            <img src="assets/CBHeader.png" class="product-img">
+
+        </div>
+        <a rel="noreferrer" class="cta-btn cta-btn--resume" href="assets/SD Framework Draft 1 copy.pptx.pdf">
+          View Project
+        </a>
+      </div>
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-start">Cycle Tech</h1>
+            <p class="col-md-8 fs-4 text-start">In March, 2020 a close friend of mine reached out for help kickstarting his recycling start-up "Cycle". I helped launch the features shown below. Perhaps foolishly, I left the company when my internship started. Still, the experience was formative for my approach for how to (and how not to) develop products. Cycle later deployed their product at the Super Bowl in partnership with Anheuser Busch:<a href="https://www.rts.com/cycle/"> Cycle.com</a></p>
+            <p class="col-md-8 fs-4 text-start"> Duration: 4 Months</p>
+            <p class="col-md-8 fs-4 text-start"> Team: 2 Founders, 4 friends</p>
+            <p class="col-md-8 fs-4 text-start">My Role: Friend</p>
+            <img src="assets/CycleUI.jpg" class="product-img">
+
+        </div>
+      </div>
+    </section>
+    <!-- GIS Section -->
+  <section id="projects">
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+            <h2 class="d-flex section-title">Geospatial Analysis & Webmaps</h2>
+        </header>
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold text-start">Ubranization Land Classification Analysis</h1>
+              <p class="text-start">
+                Bozeman, Montanna grew from 37,000 people in 2010 to 53,000 in 2020. This map explores urbanization in Bozeman. The default layers and slider allow you to visualize 2009 and 2022 True Color imagery. The layer control at the top right allows you to view land a classification analysis of the 2009 and 2022 imagery made using Google Earth Engine IDE and supervised classification and regression tree analysis.</p>
+          </br> 
+          <div id="map-container"> 
+            <div class="map-wrapper">
+                  <div id="landclassMap" class="map-wrapper__map"></div>
+                  <input type="range" id="layer-slider" min="0" max="100" value="50" style="width: 100%;">
+                  <label for="layer-slider" style="float: left;">2009</label>
+                  <label for="layer-slider" style="float: right;">2022</label>
+            </div>  
+          </div>
+        </div>
+         <!-- Lax -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold text-start">Long train Rides to Lacrosse</h1>
+              <p class="text-start">I love lacrosse so much I am willing to travel long distances to play. Check out my weekly route to men's league in Boston.
+                I made this map by querying publicly available transit data and mapping my routes using LeafletJS an open source webmapping library. </p>
+          </br> 
+          <div id="map-container"> 
+            <div class="map-wrapper">
+                  <div id="laxMap" class="map-wrapper__map"></div>
+            </div>  
+          </div>
+        </div>
+  <!-- NOLA -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold text-start">Landsat 5 NDVI Analysis</h1>
+              <p class="text-start">This map uses NDVI indexing to highlight the effect of water infrastructure failure after hurricane Katrina in New Orleans in 2005. Landsat 8 with band combinations 5, 4, 3. 
+              </p>
+              <img src="assets/NOLALayout.png" class="product-img">
+  
+          </div>
+        </div>
+  <!-- Ideal Owl Habitat -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold text-start">Ideal Owl Habitat</h1>
+              <p class="text-start">This map creates a graduated scale for ideal Spotted Owl habitat by combining multiple features in one map.</p>
+              <img src="assets/SpottedOwl.png" class="product-img">
+          </div>
+        </div>
+        <!-- Native lands -->
+        <!-- <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold text-start">Extraction on Native Lands</h1>
+              <p class="text-start">One of the first maps I made in GIS at Williams, this map shows natural resource extraction sites on native land in Arizona. 
+              </p>
+              <img src="assets/BearEarsMap.png" class="product-img">
+          </div>
+        </div> -->
+  </section>
+<!-- Artwork Section (Carousel) -->
+  <section id="art">
+    <div class="container py-4">
+      <!-- Title -->
+        <header class="pb-3 mb-4 border-bottom">
+                <h2 class="d-flex section-title">Art Work</h2>
+        </header>
+      <!-- Carousel -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Carousel Inner -->
+          <div class="carousel-inner">
+              <!-- Carousel Item 1 -->
+              <div class="carousel-item active">
+                <div class="card">
+                  <img src="assets/JimMorrison.jpeg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>A$AP Ferg</h5>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 2 -->
+              <div class="carousel-item">
+                <div class="card">
+                  <img src="assets/ferg.jpeg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>A$AP Rocky</h5>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 3 -->
+              <div class="carousel-item">
+                <div class="card">
+                  <img src="assets/Rocky.jpeg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>A$AP Rocky</h5>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 4 -->
+              <div class="carousel-item">
+                <div class="card">
+                  <img src="assets/lady.jpeg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>National Geographic Woman</h5>
+                  </div>
+                  </div>
+              </div>
+              <!-- Controls -->
+              <div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+              </div>  
+      </div>
+    </div>
+  </section>
+<!-- **** Footer Section **** -->
+  <footer id="contact" class="footer navbar-static-bottom">
+      <div class="container py-4">
+        <div class="social-links">
+        <a rel="noreferrer" href="#!" target="_blank">
+            <i class="fa fa-linkedin fa-inverse"></i>
+        </a>
+        </div>
+        <a
+        rel="noreferrer"
+        target="_blank"
+        class="cta-btn cta-btn--resume"
+        href="mailto:theoanderson2299@gmail.com"
+        >Email</a>      
+      </div>
+      <a rel="noreferrer" href="#top" class="back-to-top">
+        <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        Back to Top
+      </a>
+  </footer>
+<!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="./scripts/map.js"></script> 
+    <script defer type="module" src="index.js"></script>
+    </script>
+  </body>
+</html>

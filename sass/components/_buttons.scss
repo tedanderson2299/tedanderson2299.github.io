@@ -1,0 +1,120 @@
+/* Call to Action Button */
+.cta-btn {
+  display: inline-block;
+  position: relative;
+  padding: 0.8rem;
+  // font-size: smaller;
+  font-weight: lighter;
+  line-height: 1;
+  z-index: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  }
+}
+
+/* Hero Style */
+.cta-btn--hero {
+  /* ... other properties ... */
+
+  /* Remove text gradient and set text color to black */
+  color: black;
+  // font-weight:50px;
+  // font-size: 10px;
+  -webkit-text-fill-color: initial;
+
+  /* Make text smaller */
+  font-size: 0.8rem; /* Adjust the size as needed */
+
+  /* Hover state */
+  &:hover {
+    color: white; /* Text color on hover */
+    text-decoration: none;
+
+    &::after {
+      width: 100%;
+      background-color: $mint; /* Background color on hover */
+    }
+  }
+}
+
+/* Responsive adjustments for phones */
+@include respond(phone) {
+  .cta-btn--hero {
+    background-image: none;
+    border: 2px solid black; /* Adjust border color if needed */
+    color: black; /* Text color */
+
+    &:hover {
+      color: white; /* Text color on hover */
+      background-color: $mint; /* Background color on hover */
+    }
+  }
+}
+
+/* Resume Style */
+.cta-btn--resume {
+  color: $white-color;
+  font-weight: 400;
+  background-color: $mint; /* Background color on hover */
+  border: 2px solid $davys-gray;
+
+  &::after {
+    background: $davys-gray;
+  }
+
+  &:hover {
+    color: $white-color;
+    text-decoration: none;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+/* Resume Style */
+.cta-btn--product {
+  color: $primary-color;
+  border: 2px solid $white-color;
+
+  &::after {
+    background: $white-color;
+  }
+
+  &:hover {
+    color: $secondary-color;
+    text-decoration: none;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+.cta-btn--image {
+  background-image: url('./assets/earthicon.png');
+    background-repeat: no-repeat;
+    position: left;
+    background-position: left center; /* Aligns the image to the left and vertically centers it */
+    background-size: 64px 64px; /* Size of the image */
+    padding: 2.2rem; /* Top and bottom padding */
+    padding-left: 70px; /* Left padding - should be more than the width of the image */
+    padding-right: 20px; /* Right padding */
+    // border-width: .5px;
+    // border-style: solid;
+    text-align: left; /* Aligns text to the left */
+    /* Other styles like border-color, font-size, etc., can be added here */
+}
+
+/* Arrow Button */
+.up i {
+  color: #272727;
+}
